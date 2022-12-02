@@ -1,0 +1,305 @@
+
+html, body{
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: #333;
+ 
+}
+:root{
+
+    --text-gray: #3f4954;
+    --text-light : #686666da;
+    --bg-color: #0f0f0f;
+    --white: #ffffff;
+    --midnight: #104f55;
+    --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    --Abel: 'Abel', cursive;
+    --Anton: 'Anton', cursive;
+    --Josefin : 'Josefin', cursive;
+    --Lexend: 'Lexend', cursive;
+    --Livvic : 'Livvic', cursive;
+}
+a{
+    text-decoration: none;
+    color: var(--text-gray);
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+}
+
+ul{
+    list-style-type: none;
+}
+
+h1{
+    font-family: var(--Lexend);
+    font-size: 3rem;
+    color: white;
+    animation: shine 2s forwards, flicker 3s infinite;
+}
+
+h2{
+    font-family: var(--Lexend);
+    color: aliceblue;
+    font-size: 1.5rem;
+}
+
+h3{
+    font-family: var(--Abel);
+    font-size: 3.5rem;
+     color: #333;
+}
+
+
+span{
+    font-family: var(--Abel);
+}
+
+.text-gray{
+    color: var(--text-gray);
+}
+
+p{
+    font-family: var(--Lexend);
+    color: var(--text-light);
+}
+
+div, label {
+  
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 1vmin;
+  background: #333;
+}
+
+body .container {
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120em;
+  height: 75em;
+  position: absolute;
+}
+body .container [class*='item'] {
+  width: 33%;
+  height: 33%;
+  border: 1px solid transparent;
+  background: url() center center/cover no-repeat;
+  transition: all 0.5s ease-in-out;
+  z-index: 0;
+    position: absolute;
+    
+}
+body .container [class*='item']:hover {
+  border: 1px solid white;
+  z-index: 1;
+  transform: scale(1.2);
+  border-radius: 10px;
+}
+body .container [class*='item']:nth-of-type(1) {
+  top: 0;
+  left: 0;
+}
+body .container [class*='item']:nth-of-type(2) {
+  top: 0;
+  left: 33%;
+}
+body .container [class*='item']:nth-of-type(3) {
+  top: 0;
+  left: 66%;
+}
+body .container [class*='item']:nth-of-type(4) {
+  top: 33%;
+  left: 0;
+}
+body .container [class*='item']:nth-of-type(5) {
+  top: 33%;
+  left: 33%;
+}
+body .container [class*='item']:nth-of-type(6) {
+  top: 33%;
+  left: 66%;
+}
+body .container [class*='item']:nth-of-type(7) {
+  top: 66%;
+  left: 0;
+}
+body .container [class*='item']:nth-of-type(8) {
+  top: 66%;
+  left: 33%;
+}
+body .container [class*='item']:nth-of-type(9) {
+  top: 66%;
+  left: 66%;
+}
+body .container input {
+  display: none;
+}
+body .container input:checked + [class*='item'] {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.nav{
+    background: white;
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 10vh;
+    margin: 0%;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+    position:relative;
+}
+
+.nav .nav-menu{    
+    justify-content: space-between;
+    
+    
+}
+
+.nav .toggle-collapse{
+    position: absolute;
+    top: 0%;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+}
+
+.nav .toggle-collapse .toggle-icons{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.7rem 0;
+}
+
+.nav .toggle-collapse .toggle-icons i{
+    font-size: 1.4rem;
+    color: var(--text-gray);
+}
+
+.collapse{
+    height: 30rem;
+}
+
+.nav .nav-items{
+    display: flex;
+    margin: 0;
+    
+}
+
+.nav .nav-items .nav-link{
+    padding: 1.6rem 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    font-family: var(--Abel);
+    font-size: 1.1rem;
+}
+
+.nav .nav-items .nav-link:hover{
+    background-color: var(--midnight);
+}
+
+.nav .nav-items .nav-link:hover a{
+    color: var(--white);
+}
+
+.nav .nav-brand a{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: var(--Lexend);
+    font-size: 1.6rem;
+}
+nav-deop li:hover > ul
+{
+/*these 2 styles are very important,
+being the ones which make the drop-down to appear on hover */
+    visibility:visible;
+    opacity:1;
+}
+ 
+nav-deop ul, nav-deop ul li ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+/*the next 2 styles are very important,
+being the ones which make the drop-down to stay hidden */
+    visibility:hidden;
+    opacity:0;
+    position: absolute;
+    z-index: 99999;
+    width:180px;
+    background:#f8f8f8;
+    box-shadow:1px 1px 3px #ccc;
+/* css3 transitions for smooth hover effect */
+    -webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
+    -moz-transition:opacity 0.2s linear, visibility 0.2s linear;
+    -o-transition:opacity 0.2s linear, visibility 0.2s linear;
+    transition:opacity 0.2s linear, visibility 0.2s linear;
+}
+ 
+nav-deop ul {
+    top: 43px;
+    left: 1px;
+}
+ 
+nav-deop ul li ul {
+    top: 0;
+    left: 181px; /* strong related to width:180px; from above */
+}
+ 
+nav-deop ul li {
+    clear:both;
+    width:100%;
+    border:0 none;
+    border-bottom:1px solid #c9c9c9;
+}
+ 
+nav-deop ul li a {
+    background:none;
+    padding:7px 15px;
+    color:#616161;
+    text-shadow:1px 1px 0px #fff;
+    text-decoration:none;
+    display:inline-block;
+    border:0 none;
+    float:left;
+    clear:both;
+    width:150px;
+}
+main .site-content{
+    display:grid;
+    grid-template-columns:50% 50%;
+   
+}
+
+
+.site-content .pagination{
+    justify-content:flex-end;
+    color: var(--text-gray);
+    margin: 2rem 0;
+}
+
+.site-content .pagination a{
+    padding: .8rem .9rem;
+    border-radius: 2rem;
+    margin: 0 .3rem;
+    font-family: var(--Lexend);
+}
+
+.site-content .pagination .pages{
+    background: var(--text-gray);
+    color: var(--white);
+}
+
+
